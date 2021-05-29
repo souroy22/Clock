@@ -19,6 +19,7 @@ setInterval(() => {
 var hr = document.querySelector("#digiHr");
 var mn = document.querySelector("#digiMn");
 var sec = document.querySelector("#digiSec");
+var am_pm = document.querySelector("#am-pm");
 // console.log(hr, mn, sec);
 setInterval(() => {
   let d = new Date();
@@ -26,6 +27,11 @@ setInterval(() => {
   let htime = d.getHours();
   let mtime = d.getMinutes();
   let stime = d.getSeconds();
+  if(htime < 12){
+      am_pm.innerText = "A.M.";
+  }else{
+    am_pm.innerText = "P.M.";
+  }
 //   console.log(htime);
 htime = Math.abs(htime - 12);
     if(htime < 10){
