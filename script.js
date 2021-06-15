@@ -1,52 +1,37 @@
-setInterval(() => {
-  let d = new Date();
-  let htime = d.getHours();
-  let mtime = d.getMinutes();
-  let stime = d.getSeconds();
-  hrotation = 30 * htime + mtime / 2;
-  mrotation = 6 * mtime;
-  srotation = 6 * stime;
-  hour.style.transform = `rotate(${hrotation}deg)`;
-  minute.style.transform = `rotate(${mrotation}deg)`;
-  second.style.transform = `rotate(${srotation}deg)`;
-}, 1000);
-
-// let d = new Date();
-// let htime = d.getHours();
-// let mtime = d.getMinutes();
-// let stime = d.getSeconds();
-
 var hr = document.querySelector("#digiHr");
 var mn = document.querySelector("#digiMn");
 var sec = document.querySelector("#digiSec");
 var am_pm = document.querySelector("#am-pm");
-// console.log(hr, mn, sec);
+
 setInterval(() => {
   let d = new Date();
-  //   console.log(d);
+  // retriving hours, minutes and seconds from date
   let htime = d.getHours();
   let mtime = d.getMinutes();
   let stime = d.getSeconds();
-  if(htime < 12){
-      am_pm.innerText = "A.M.";
-  }else{
-    am_pm.innerText = "P.M.";
+
+  // for analog clock
+  // calculate the angle of the hands
+  hrotation = 30 * htime + mtime / 2 + stime / 120;
+  mrotation = 6 * mtime + stime / 10;
+  srotation = 6 * stime;
+
+  // according to the angles change the style of the hands
+  hour.style.transform = `rotate(${hrotation}deg)`;
+  minute.style.transform = `rotate(${mrotation}deg)`;
+  second.style.transform = `rotate(${srotation}deg)`;
+
+  // for digital clock
+
+  am_pm.innerText = htime < 12 ? "A.M." : "P.M.";
+
+  if (htime > 12) {
+    htime = htime - 12;
   }
-//   console.log(htime);
-htime = Math.abs(htime - 12);
-    if(htime < 10){
-        hr.innerText = "0" + htime;
-    }else{
-        hr.innerText = htime;
-    }
-    if(mtime < 10){
-        mn.innerText = "0" + mtime;
-    }else{
-        mn.innerText = mtime;
-    }
-    if(stime < 10){
-        sec.innerText = "0" + stime;
-    }else{
-        sec.innerText = stime;
-    }
+
+  hr.innerText = htime < 10 ? "0" + htime : htime;
+
+  mn.innerText = mtime < 10 ? "0" + mtime : mtime;
+
+  sec.innerText = stime < 10 ? "0" + stime : stime;
 }, 1000);
