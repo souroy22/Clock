@@ -73,45 +73,8 @@
   left: 48.7%;
 }
 
-.h12 {
-  background-color: white;
-  height: 20px;
-  width: 2px;
-  position: absolute;
-  top: 2%;
-  left: 49.3%;
-}
-.h03 {
-  background-color: white;
-  height: 20px;
-  width: 2px;
-  position: absolute;
-  /* top: 1px; */
-  left: 95%;
-  transform: rotate(90deg);
-}
-
-.h06 {
-  background-color: white;
-  height: 20px;
-  width: 2px;
-  position: absolute;
-  top: 93%;
-  left: 49.3%;
-}
-.h09 {
-  background-color: white;
-  height: 20px;
-  width: 2px;
-  position: absolute;
-  /* top: 1; */
-  left: 5%;
-  transform: rotate(90deg);
-}
-
 .digital-clock {
   color: white;
-  /* border: 2px solid white; */
   padding: 10px;
   margin: auto;
   margin-top: 40px;
@@ -119,8 +82,6 @@
   justify-content: space-between;
   width: 450px;
 }
-
-
 
 #digiHr {
   color: white;
@@ -169,7 +130,7 @@
 }
 
 #am-pm {
-  background-image: linear-gradient(#EFF54D, #00AC61);
+  background-image: linear-gradient(#eff54d, #00ac61);
   padding: 10px;
   height: 30px;
   margin-top: 40px;
